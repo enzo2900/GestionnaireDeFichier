@@ -10,5 +10,6 @@ public class FileModifieur {
 
 	public static void move(Fichier f) throws IOException {
 		Files.move(f.emplacement(),f.emplacementBase(),StandardCopyOption.REPLACE_EXISTING);
+		System.out.println(f.emplacement().toString() + " est déplacée");
 	}
 }

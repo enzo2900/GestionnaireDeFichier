@@ -13,15 +13,32 @@ public abstract class ElementSysFichier {
 	/** 
 	 * Emplacement de l'élement
 	 */
-	private Path url;
+	private Path emplacement;
 	
-	public ElementSysFichier(String url) {
-		this.url = Paths.get(url);
+	public ElementSysFichier(String emplacement) {
+		nom = "NoNameImplemented";
+		this.emplacement = Paths.get(emplacement+"\\" + nom);
+		profondeur = 0;
+		
+	}
+	
+	public ElementSysFichier(String emplacement,String nom) {
+		if(nom.isEmpty()) {
+			this.nom = "NoNameImplemented";
+		}else {
+			this.nom = nom;
+		}
+		this.emplacement = Paths.get(emplacement+"\\" + nom);
+		profondeur = 0;
 	}
 	
 	
 	public Path emplacement() {
-		return url;
+		return emplacement;
+	}
+	
+	public String getNom() {
+		return nom;
 	}
 
 }
